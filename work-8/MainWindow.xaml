@@ -5,25 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:work_8"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="800">
-    <Grid Background="#FFF2F8F0">
+        Title="Авторизация" Height="550" Width="800">
+    <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.05*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <StackPanel.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFD7E7CE" Offset="0"/>
-                    <GradientStop Color="#FFFEDA6C" Offset="1"/>
-                </LinearGradientBrush>
-            </StackPanel.Background>
-            <Label Content="erwr"/>
-            <Label Content="2432"/>
-            
+        <StackPanel Margin="150,0,150,0"  VerticalAlignment="Center" Grid.ColumnSpan="2">
+            <Label Content="Авторизация" HorizontalAlignment="Center" FontSize="36" FontFamily="Cooper Black"  Foreground="#FF000060"/>
+            <Label Content="Логин" FontSize="22" FontFamily="Cooper Black" Foreground="#FF8AB5EA"/>
+            <TextBox x:Name="loginBox" FontSize="22"/>
+            <Label Content="Пароль" FontSize="22" FontFamily="Cooper Black" Foreground="#FF8AB5EA"/>
+            <PasswordBox x:Name="passBox" FontSize="22"/>
+            <Button Content="Забыли пароль?" Margin="90, 12, 90, 0" Height="20" Background="#FFFFD966" FontFamily="Cooper Black" Foreground="#FFA6D7E5" FontSize="14" BorderBrush="White" Click="Button_Click_1"></Button>
+            <Button Content="Вход" Margin="0,30" Height="30" Background="#FFFFD966" FontFamily="Cooper Black" Foreground="#FFA6D7E5" FontSize="22" BorderBrush="White" Click="Button_Click_2"></Button>
+            <Button Content="Регистрация" Height="30" Background="#FFA6D7E5" FontFamily="Cooper Black" Foreground="#FFFFD966" FontSize="22" BorderBrush="White" Click="Button_Click"></Button>
+            <Image Source="/Рисунок1.png" Width="120" Margin="10"/>
         </StackPanel>
     </Grid>
 </Window>

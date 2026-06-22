@@ -20,9 +20,50 @@ namespace work_8
     /// </summary>
     public partial class MainWindow : Window
     {
+        User user = new User();
+        HashSet<string> logins = new HashSet<string>();
+        Dictionary<string, string> passwords = new Dictionary<string, string>();
+        
         public MainWindow()
         {
             InitializeComponent();
+            logins.Add(user.login);
+            passwords[user.login] = user.password;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Hide();
+            Registration registration = new Registration();
+            registration.ShowDialog();
+            Show();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Hide();
+            PasswordReboot passreb = new PasswordReboot();
+            passreb.ShowDialog();
+            Show();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+
+            string login = loginBox.Text;
+            string password = passBox.Password;
+            if (string.IsNullOrEmpty(login))
+            {
+                if (logins.Contains(login))
+                {
+                    if (passwords[user.login] == password)
+                    {
+                        MessageBox.Show("Ура!");
+                    }
+                }
+            }
+            //MessageBox.Show()
+
         }
     }
 }
