@@ -43,6 +43,13 @@ namespace work_8
             }
             else
             {
+                if (password == passwordRep)
+                {
+                    User us = new User(name, lastname, middlename, login, phone, password, DateTime.Today.ToString(), role);
+                    Hide();
+                    Main main = new Main();
+                    main.Show();
+                }
                 
             }
         }

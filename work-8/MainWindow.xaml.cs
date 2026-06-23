@@ -20,7 +20,7 @@ namespace work_8
     /// </summary>
     public partial class MainWindow : Window
     {
-        User user = new User("Кверк", "Кверков", "Кверкович", "89021363729", "12345", "password", "12.12.2025", "Администратор");
+        User user = new User("Кверк", "Кверков", "Кверкович", "12345", "89021354234", "password", "12.12.2025", "Администратор");
         HashSet<string> logins = new HashSet<string>();
         Dictionary<string, string> passwords = new Dictionary<string, string>();
         

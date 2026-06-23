@@ -14,7 +14,7 @@ namespace work_8
         public string login;
         public string password;
         string registrationDate;
-        string phone;
+        public string phone;
         string role;
         HashSet<string> passwords = new HashSet<string>();
         public User(string name, string lastname, string middlename, string login, string phone, string password, string registrationDate, string pole)
@@ -27,6 +27,7 @@ namespace work_8
             this.password = password;
             this.registrationDate = registrationDate;
             this.role = role;
+            GeneratePasswords();
             //name = "Кверк";
             //lastname = "Кверков";
             //middlename = "Кверкович";
