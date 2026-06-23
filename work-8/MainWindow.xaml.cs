@@ -20,7 +20,7 @@ namespace work_8
     /// </summary>
     public partial class MainWindow : Window
     {
-        User user = new User();
+        User user = new User("Кверк", "Кверков", "Кверкович", "89021363729", "12345", "password", "12.12.2025", "Администратор");
         HashSet<string> logins = new HashSet<string>();
         Dictionary<string, string> passwords = new Dictionary<string, string>();
         
@@ -50,19 +50,23 @@ namespace work_8
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
 
-            string login = loginBox.Text;
-            string password = passBox.Password;
-            if (string.IsNullOrEmpty(login))
+            string login1 = loginBox.Text;
+            string password1 = passBox.Password;
+            if (!string.IsNullOrEmpty(login1) || !string.IsNullOrEmpty(password1))
             {
-                if (logins.Contains(login))
+                if (logins.Contains(login1))
                 {
-                    if (passwords[user.login] == password)
+                    if (passwords[user.login] == password1)
                     {
-                        MessageBox.Show("Ура!");
+                        Hide();
+                        Main main = new Main();
+                        main.Show();
                     }
                 }
+                else MessageBox.Show("Пользователя с таким логином не существует!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+
             }
-            //MessageBox.Show()
+            else MessageBox.Show("Поле логина или пароля не заполнено", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
 
         }
     }

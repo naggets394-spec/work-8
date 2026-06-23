@@ -13,10 +13,10 @@ D:\Users\1118S-13\Documents\2-ИСП\Полевая\work-8\work-8\obj\Debug\work
 D:\Users\1118S-13\Documents\2-ИСП\Полевая\work-8\work-8\obj\Debug\work-8.csproj.CoreCompileInputs.cache
 D:\Users\1118S-13\Documents\2-ИСП\Полевая\work-8\work-8\obj\Debug\work-8.exe
 D:\Users\1118S-13\Documents\2-ИСП\Полевая\work-8\work-8\obj\Debug\work-8.pdb
-D:\Users\1118S-13\Documents\2-ИСП\Полевая\work-8\work-8\obj\Debug\work-8.exe.config
 D:\Users\1118S-13\Documents\2-ИСП\Полевая\work-8\work-8\obj\Debug\Registration.g.cs
 D:\Users\1118S-13\Documents\2-ИСП\Полевая\work-8\work-8\obj\Debug\Registration.baml
-D:\Users\1118S-13\Documents\2-ИСП\Полевая\work-8\work-8\obj\Debug\Window1.g.cs
-D:\Users\1118S-13\Documents\2-ИСП\Полевая\work-8\work-8\obj\Debug\Window1.baml
 D:\Users\1118S-13\Documents\2-ИСП\Полевая\work-8\work-8\obj\Debug\PasswordReboot.g.cs
 D:\Users\1118S-13\Documents\2-ИСП\Полевая\work-8\work-8\obj\Debug\PasswordReboot.baml
+D:\Users\1118S-13\Documents\2-ИСП\Полевая\work-8\work-8\obj\Debug\Main.g.cs
+D:\Users\1118S-13\Documents\2-ИСП\Полевая\work-8\work-8\obj\Debug\Main.baml
+D:\Users\1118S-13\Documents\2-ИСП\Полевая\work-8\work-8\obj\Debug\work-8.exe.config

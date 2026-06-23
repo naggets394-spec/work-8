@@ -22,11 +22,29 @@ namespace work_8
         public Registration()
         {
             InitializeComponent();
+            roles.Items.Add("Менеджер");
+            roles.Items.Add("Администратор");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            string name = name1.Text;
+            string lastname = lastname1.Text;
+            string middlename = middlename1.Text;
+            string phone = phone1.Text;
+            string login = login2.Text;
+            string password = password2.Password;
+            string passwordRep = passwordRep1.Password;
+            string role = roles.SelectedItem as string;
+            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(lastname) || string.IsNullOrEmpty(phone) || string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(passwordRep) 
+               || string.IsNullOrEmpty(role))
+            {
+                MessageBox.Show("Не все поля заполнены!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                
+            }
         }
     }
 }
