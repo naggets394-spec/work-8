@@ -23,5 +23,18 @@ namespace work_8
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string phoneReb = phone1.Text;
+            if (string.IsNullOrEmpty(phoneReb)) MessageBox.Show("Не заполнены поля");
+            else
+            {
+                if (phones)
+                {
+
+                }
+            }
+        }
     }
 }

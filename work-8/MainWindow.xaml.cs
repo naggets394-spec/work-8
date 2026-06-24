@@ -21,14 +21,15 @@ namespace work_8
     public partial class MainWindow : Window
     {
         User user = new User("Кверк", "Кверков", "Кверкович", "12345", "89021354234", "password", "12.12.2025", "Администратор");
-        HashSet<string> logins = new HashSet<string>();
-        Dictionary<string, string> passwords = new Dictionary<string, string>();
-        
+        static public HashSet<string> logins = new HashSet<string>();
+        static public Dictionary<string, string> passwords = new Dictionary<string, string>();
+        static public HashSet<string> phones { get; set; }
         public MainWindow()
         {
             InitializeComponent();
             logins.Add(user.login);
             passwords[user.login] = user.password;
+            phones.Add(user.phone);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
