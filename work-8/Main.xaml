@@ -8,11 +8,15 @@
         Title="Главная" Height="700" Width="850" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2.5*" x:Name="boo"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0"  Orientation="Vertical">
-                <Label Content="Недавние резюме" Foreground="#FF000060" FontSize="18" FontFamily="Cooper Black" Margin="15"/>
+            <ColumnDefinition Width="2.5*" x:Name="boo"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0"  Orientation="Vertical">
+            <Label Content="Недавние резюме" Foreground="#FF000060" FontSize="20" FontFamily="Cooper Black" Margin="10"/>
+            <StackPanel Margin="15" Height="130" Background="#FFE9F4F7">
+                <Label Content="Резюме !!!!!!!!!!!!!!!!!!!!" Foreground="#FF000060" FontSize="16" FontFamily="Cooper Black" Margin="4"/>
+                <Label Content="Резюме информация важная" Foreground="#FF86ACDB" FontSize="14" FontFamily="Cooper Black" Margin="2"/>
+            </StackPanel>
             </StackPanel>
         <StackPanel Grid.Column="1" Background="#FFE9F4F7" >
             <Button Content="Создать резюме" Height="30" Width="170" Margin="20, 20, 20, 0" Foreground="#FF000060" BorderBrush="White" Background="#FF8AB5EA" FontSize="14" FontFamily="Cooper Black"></Button>
@@ -25,9 +29,13 @@
         </StackPanel>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="4*"/>
-                <RowDefinition/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+            <StackPanel Grid.Row="1" Orientation="Vertical">
+                <Button Content="О программе" Width="170" Margin="20, 20, 20, 0" Background="White" BorderBrush="White" Foreground="#FF000060" FontFamily="Cooper Black"/>
+                <Button Content="Выход" Width="170" Margin="20, 20, 20, 0" Background="White" BorderBrush="White" Foreground="#FF000060" FontFamily="Cooper Black" Click="Button_Click"/>
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>
