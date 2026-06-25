@@ -19,6 +19,7 @@ namespace work_8
     /// </summary>
     public partial class PasswordReboot : Window
     {
+        string phoneReb;
         public PasswordReboot()
         {
             InitializeComponent();
@@ -26,15 +27,25 @@ namespace work_8
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string phoneReb = phone1.Text;
+            phoneReb = phone1.Text;
             if (string.IsNullOrEmpty(phoneReb)) MessageBox.Show("Не заполнены поля");
             else
             {
-                if (phones)
+                if (Data.phones.Contains(phoneReb))
                 {
-
+                    changebtn.IsEnabled = true;
+                    foreach (string password in User.passwords) paswordList.Items.Add(password);
                 }
+                else MessageBox.Show("Пользователя с таким номером е существует!");
             }
+        }
+        private void changebtn_Click(object sender, RoutedEventArgs e)
+        {
+            string password = paswordList.SelectedItem.ToString();
+            Data.usersPh[phoneReb].password = password;
+            Close();
+            Main main = new Main();
+            main.Show();
         }
     }
 }

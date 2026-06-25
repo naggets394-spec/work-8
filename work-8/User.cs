@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace work_8
 {
@@ -16,7 +18,7 @@ namespace work_8
         string registrationDate;
         public string phone;
         string role;
-        HashSet<string> passwords = new HashSet<string>();
+        public static HashSet<string> passwords = new HashSet<string>();
         public User(string name, string lastname, string middlename, string login, string phone, string password, string registrationDate, string pole)
         {
             this.name = name;
@@ -40,16 +42,18 @@ namespace work_8
         void GeneratePasswords()
         {
             string validChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+";
+            List<char> charList = validChars.ToList();
             Random rnd = new Random();
             string res = default;
-            for (int j = 0; j < 10; j++)
+            for (int j = 0; j < 11; j++)
             {
                 for (int i = 0; i < 16; i++)
                 {
-                    int index = rnd.Next(validChars.Length);
-                    res += validChars[index];
+                    int index = rnd.Next(charList.Count);
+                    res += charList[index];
                 }
                 passwords.Add(res);
+                res = default;
             }
         }
     }
