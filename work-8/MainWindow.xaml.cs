@@ -55,15 +55,18 @@ namespace work_8
             {
                 if (Data.logins.Contains(login1))
                 {
-                    if (Data.passwords[Data.user.login] == password1)
+                    if (User.passwords.Contains(password1) )
                     {
+                        User.passwords.Remove(password1);
                         Hide();
                         Main main = new Main();
                         main.ShowDialog();
                         Show();
                     }
+                    else MessageBox.Show("Неверный пароль или логин!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+
                 }
-                else MessageBox.Show("Пользователя с таким логином не существует!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                else MessageBox.Show("Неверный пароль или логин!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
 
             }
             else MessageBox.Show("Поле логина или пароля не заполнено", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);

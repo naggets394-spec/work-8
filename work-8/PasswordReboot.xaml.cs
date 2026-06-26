@@ -36,16 +36,17 @@ namespace work_8
                     changebtn.IsEnabled = true;
                     foreach (string password in User.passwords) paswordList.Items.Add(password);
                 }
-                else MessageBox.Show("Пользователя с таким номером е существует!");
+                else MessageBox.Show("Пользователя с таким номером не существует!");
             }
         }
         private void changebtn_Click(object sender, RoutedEventArgs e)
         {
             string password = paswordList.SelectedItem.ToString();
-            Data.usersPh[phoneReb].password = password;
+            User.passwords.Remove(password);
             Close();
             Main main = new Main();
             main.Show();
+            
         }
     }
 }

@@ -35,10 +35,8 @@ namespace work_8
             string middlename = middlename1.Text;
             string phone = phone1.Text;
             string login = login2.Text;
-            string password = password2.Password;
-            string passwordRep = passwordRep1.Password;
             string role = roles.SelectedItem as string;
-            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(lastname) || string.IsNullOrEmpty(phone) || string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(passwordRep) 
+            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(lastname) || string.IsNullOrEmpty(phone) || string.IsNullOrEmpty(login)
                || string.IsNullOrEmpty(role))
             {
                 MessageBox.Show("Не все поля заполнены!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -57,18 +55,27 @@ namespace work_8
                 else if (Data.phones.Contains(phone)) errors.Add("Пользователь с таким номером телефона уже существует!");
                 if (errors.Count < 1)
                 {
-                    if (password == passwordRep)
+                    User us;
+                    if (role == "Администратор")
                     {
-                        User us = new User(name, lastname, middlename, login, phone, password, DateTime.Today.ToString(), role);
-                        Data.users[login] = us;
-                        Data.usersPh[phone] = us;
-                        Data.logins.Add(login);
-                        Data.phones.Add(phone);
-                        Data.passwords[login] = password;
-                        Hide();
-                        Main main = new Main();
-                        main.Show();
+                        us = new User(name, lastname, middlename, login, phone, DateTime.Today.ToString(), Role.Admin);
                     }
+                    else
+                    {
+                        us = new User(name, lastname, middlename, login, phone, DateTime.Today.ToString(), Role.Menager);
+                    }
+                    Data.users[login] = us;
+                    Data.usersPh[phone] = us;
+                    Data.logins.Add(login);
+                    Data.phones.Add(phone);
+                    string passlist = default;
+                    foreach (string passwor in User.passwords)
+                    {
+                        passlist += $"{passwor}\n";
+                    }
+                    MessageBox.Show("Список ваших паролей:\n" +
+                        passlist, $"Успешная регистрация под ролью {role}!", MessageBoxButton.OK, MessageBoxImage.Information);
+                    Close();
                 }
                 else
                 {
@@ -77,7 +84,7 @@ namespace work_8
                     {
                         errorslist += $"{error}{Environment.NewLine}";
                     }
-                    MessageBox.Show(errorslist);
+                    MessageBox.Show(errorslist, "Ошибки", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
                     
             }

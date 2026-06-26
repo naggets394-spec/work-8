@@ -14,19 +14,17 @@ namespace work_8
         string lastname;
         string middlename;
         public string login;
-        public string password;
         string registrationDate;
         public string phone;
-        string role;
+        Role role;
         public static HashSet<string> passwords = new HashSet<string>();
-        public User(string name, string lastname, string middlename, string login, string phone, string password, string registrationDate, string pole)
+        public User(string name, string lastname, string middlename, string login, string phone, string registrationDate, Role role)
         {
             this.name = name;
             this.lastname = lastname;
             this.middlename = middlename;
             this.phone = phone;
             this.login = login;
-            this.password = password;
             this.registrationDate = registrationDate;
             this.role = role;
             GeneratePasswords();
