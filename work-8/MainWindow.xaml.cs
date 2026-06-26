@@ -57,13 +57,28 @@ namespace work_8
                 {
                     if (User.passwords.Contains(password1) )
                     {
-                        User.passwords.Remove(password1);
                         Hide();
+                        User.passwords.Remove(password1);
+                        if (User.passwords.Count < 1)
+                        {
+                            if (MessageBox.Show("Это был последний пароль в списке. Сгенерировать новый?\n" +
+                                "В ином случае вход в учетную запись будет недоступен", "Последний пароль!", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                            {
+                                Data.users[login1].GeneratePasswords();
+                                string passlist = default;
+                                foreach (string passwor in User.passwords)
+                                {
+                                    passlist += $"{passwor}\n";
+                                }
+                                MessageBox.Show("Список ваших паролей:\n" +
+                                    passlist, $"Успешная генерация новых паролей!", MessageBoxButton.OK, MessageBoxImage.Information);
+                            }
+                        }
                         Main main = new Main();
                         main.ShowDialog();
                         Show();
                     }
-                    else MessageBox.Show("Неверный пароль или логин!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    else MessageBox.Show("Неверный пароль или логин или количество паролей исчерпано!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
 
                 }
                 else MessageBox.Show("Неверный пароль или логин!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);

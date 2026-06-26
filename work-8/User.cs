@@ -37,15 +37,16 @@ namespace work_8
             //phone = "1234567890";
             //role = "Менеджер";
         }
-        void GeneratePasswords()
+        public void GeneratePasswords()
         {
-            string validChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+";
+            passwords.Clear();
+            string validChars = "1234567890";
             List<char> charList = validChars.ToList();
             Random rnd = new Random();
             string res = default;
-            for (int j = 0; j < 11; j++)
+            for (int j = 0; j < 2; j++)
             {
-                for (int i = 0; i < 16; i++)
+                for (int i = 0; i < 10; i++)
                 {
                     int index = rnd.Next(charList.Count);
                     res += charList[index];
